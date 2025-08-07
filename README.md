@@ -4,6 +4,8 @@ Local RAG Opensource with Ollama Engine
 
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
 
+sudo -u ollama env OLLAMA_HOST=0.0.0.0:11434 OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve
+
 curl http://10.12.248.187:11434/v1/models
 
 docker run --rm -it   --name kuzrag   -e MODEL=ollama   -e MODEL_NAME=kuzrag-full:latest   -e BASE_URL=http://10.12.248.187:11434   -e API_KEY=dummy   -e EMBEDDING_MODEL_NAME=nomic-embed-text   -p 7860:7860   ghcr.io/cinnamon/kotaemon:main-ollama
