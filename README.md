@@ -47,7 +47,7 @@ curl http://10.12.248.187:11434/v1/models
 
 You should receive a JSON list of available models including kuzrag-full.
 
-4. Install Docker & Setup Kotaemon
+## 4. Install Docker & Setup Kotaemon
    
 a) Install Docker and Docker Compose
 
@@ -100,12 +100,12 @@ services:
     volumes:
       - ./uploads:/app/uploads
 
-5. Launch Kotaemon
+## 5. Launch Kotaemon
 
 docker compose up -d
 docker ps  # Verify container is running
 
-6. Access and Use
+## 6. Access and Use
 
     Open your browser at http://<server_ip>:7860 (e.g., http://10.12.248.187:7860).
 
@@ -113,7 +113,7 @@ docker ps  # Verify container is running
 
     Upload files and interact with your local kuzrag-full Ollama model through the web UI.
 
-7. Notes
+## 7. Notes
 
     API_KEY=dummy disables API key enforcement, since Ollama local server doesn't require authentication.
 
@@ -121,7 +121,7 @@ docker ps  # Verify container is running
 
     All external cloud APIs (OpenAI, Azure, Google, Cohere) are disabled for a fully local setup.
 
-8. Final Project Structure
+## 8. Final Project Structure
 
 kotaemon/
 ├── docker-compose.yml
