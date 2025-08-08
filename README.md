@@ -125,10 +125,13 @@ docker ps  # Verify container is running
 
 ## 8. Final Project Structure
 
-kotaemon/
-├── docker-compose.yml
-├── env.local
-└── uploads/
+kotaemon/ 
+
+├── docker-compose.yml 
+
+├── env.local 
+
+└── uploads/ 
 
 
 
