@@ -118,10 +118,32 @@ docker ps  # Verify container is running
 
     Upload files and interact with your local kuzrag-full Ollama model through the web UI.
 
-## 7. You have to configure your models in Kotaemon for default use. 
+## 7. You have to configure your models in Kotaemon for default use 
+
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Connect-Model.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Connect-Model.png">
+ <img alt="" src="">
+</picture>
+
+## 8.Upload some file to Process 
+
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Upload-Files.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Upload-Files.png">
+ <img alt="" src="">
+</picture> 
+
+## 9. Process Files 
+
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Process-File.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Process-File.png">
+ <img alt="" src="">
+</picture> 
 
 
-## 8. Notes
+## 10. Notes
 
     API_KEY=dummy disables API key enforcement, since Ollama local server doesn't require authentication.
 
@@ -129,7 +151,8 @@ docker ps  # Verify container is running
 
     All external cloud APIs (OpenAI, Azure, Google, Cohere) are disabled for a fully local setup.
 
-## 8. Final Project Structure
+
+## Final Project Structure
 
 kotaemon/ 
 
