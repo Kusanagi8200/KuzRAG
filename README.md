@@ -38,14 +38,17 @@ Follow official instructions (https://ollama.com/docs).
 
 ```bash
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
-
+```
 This runs Ollama on all interfaces, port 11434, serving models located in the specified directory.
+
 d) Test the Ollama API
 
 curl http://10.12.248.187:11434/v1/models
 
 You should receive a JSON list of available models including kuzrag-full.
+
 4. Install Docker & Setup Kotaemon
+   
 a) Install Docker and Docker Compose
 
 sudo apt update
@@ -80,7 +83,8 @@ KH_LOG_REQUESTS=true
 
 USE_CUSTOMIZED_GRAPHRAG_SETTING=false
 
-docker-compose.yml
+
+Create docker-compose.yml
 
 version: "3.8"
 
