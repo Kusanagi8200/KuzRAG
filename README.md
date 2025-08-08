@@ -121,6 +121,12 @@ docker ps  # Verify container is running
 ## 7. You have to configure your models in Kotaemon for default use 
 
 <picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Add-Model.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Add-Model.png">
+ <img alt="" src="">
+</picture>
+
+<picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Connect-Model.png">
  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Connect-Model.png">
  <img alt="" src="">
