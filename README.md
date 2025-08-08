@@ -1,10 +1,13 @@
 # KuzRAG
 
-# Kotaemon Deployment Tutorial with Ollama and KuzAI (All-in-One)
+# Kotaemon Deployment Tutorial with Ollama and KuzAI (All-in-One) Full Local Stack.
 
 ## 1. Project Overview
 
-Kotaemon is a Gradio-based web interface that leverages a local Ollama language model (LLM) called **kuzrag-full**, developed with the KuzAI toolkit. This setup allows running a powerful, autonomous conversational AI locally without relying on external cloud APIs.
+Kotaemon (github.com/Cinnamon/kotaemon) is a Gradio-based web interface that leverages a local Ollama language model (LLM) 
+that you can configure with KuzAI toolkit (github.com/Kusanagi8200/KuzAI).
+This setup allows running a powerful, autonomous conversational AI locally without relying on external cloud APIs.
+
 
 **Architecture:**
 
