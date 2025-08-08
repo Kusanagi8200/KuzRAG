@@ -174,7 +174,6 @@ ________________________________________________________________________________
 
     All external cloud APIs (OpenAI, Azure, Google, Cohere) are disabled for a fully local setup.
 
-
 ## Final Project Structure
 
 kotaemon/ 
