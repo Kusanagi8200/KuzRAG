@@ -115,7 +115,10 @@ docker ps  # Verify container is running
 
     Upload files and interact with your local kuzrag-full Ollama model through the web UI.
 
-## 7. Notes
+## 7. You have to configure your models in Kotaemon for default use. 
+
+
+## 8. Notes
 
     API_KEY=dummy disables API key enforcement, since Ollama local server doesn't require authentication.
 
