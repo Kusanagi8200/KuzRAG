@@ -118,6 +118,8 @@ docker ps  # Verify container is running
 
     Upload files and interact with your local kuzrag-full Ollama model through the web UI.
 
+______________________________________________________________________________________________________________________________ 
+
 ## 7. You have to configure your models in Kotaemon for default use 
 
 <picture>
@@ -132,6 +134,8 @@ docker ps  # Verify container is running
  <img alt="" src="">
 </picture>
 
+______________________________________________________________________________________________________________________________ 
+
 ## 8.Upload some file to Process 
 
 <picture>
@@ -139,6 +143,8 @@ docker ps  # Verify container is running
  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Upload-Files.png">
  <img alt="" src="">
 </picture> 
+
+______________________________________________________________________________________________________________________________ 
 
 ## 9. Process Files 
 
@@ -148,8 +154,19 @@ docker ps  # Verify container is running
  <img alt="" src="">
 </picture> 
 
+______________________________________________________________________________________________________________________________ 
 
-## 10. Notes
+## 10. Mind Mapp 
+
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-MindMap.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-MindMap.png">
+ <img alt="" src="">
+</picture> 
+
+______________________________________________________________________________________________________________________________
+
+## 11. Notes
 
     API_KEY=dummy disables API key enforcement, since Ollama local server doesn't require authentication.
 
@@ -168,9 +185,10 @@ kotaemon/
 
 └── uploads/ 
 
+______________________________________________________________________________________________________________________________ 
 
 
-__________________________________________
+## 11. Extra 
 
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
 
@@ -180,5 +198,5 @@ curl http://10.12.248.187:11434/v1/models
 
 docker run --rm -it   --name kuzrag   -e MODEL=ollama   -e MODEL_NAME=kuzrag-full:latest   -e BASE_URL=http://10.12.248.187:11434   -e API_KEY=dummy   -e EMBEDDING_MODEL_NAME=nomic-embed-text   -p 7860:7860   ghcr.io/cinnamon/kotaemon:main-ollama
 
-__________________________________________
+______________________________________________________________________________________________________________________________
   
