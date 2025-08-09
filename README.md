@@ -5,24 +5,23 @@
  <img alt="" src="">
 </picture> 
 
-# Kotaemon Deployment Tutorial with Ollama and KuzAI (All-in-One)
+## **Kotaemon Deployment Tutorial with Ollama and KuzAI (All-in-One)**
+## **Full Local Stack**
 
-# Full Local Stack
-
-## 1. Project Overview
+### **1. Project Overview**
 
 Kotaemon (github.com/Cinnamon/kotaemon) is a Gradio-based web interface that leverages a local Ollama language model (LLM) 
 that you can configure with KuzAI toolkit (github.com/Kusanagi8200/KuzAI).
 This setup allows running a powerful, autonomous conversational AI locally without relying on external cloud APIs.
 
-
-**Architecture:**
+**Architecture**
 
 - **Ollama**: Hosts and serves local LLM models via a REST API.
 - **KuzAI**: Toolkit for training and creating Ollama-compatible models.
 - **Kotaemon**: Dockerized frontend interacting with Ollama’s API, providing a UI and file upload management.
 
-## 2. Prerequisites
+
+### **2. Prerequisites**
 
 - Linux server with root or sudo access.
 - Docker & Docker Compose installed.
@@ -30,45 +29,47 @@ This setup allows running a powerful, autonomous conversational AI locally witho
 - Clone or download the Kotaemon repository from GitHub.
 
 
-## 3. Install Ollama & Prepare Your Model
+### **3. Install Ollama & Prepare Your Model**
 
-### a) Install Ollama
+#### **a) Install Ollama**
 
-Follow official instructions (https://ollama.com/docs).
+- Follow official instructions (https://ollama.com/docs).
 
-### b) Create a Custom Ollama Model Using KuzAI
 
+#### **b) Create a Custom Ollama Model Using KuzAI**
+  
 - KuzAI repo: https://github.com/Kusanagi8200/KuzAI
 - Train or build your `kuzrag-full` Ollama model using KuzAI.
-
-### c) Run Ollama as a Local Server
+  
+  
+#### **c) Run Ollama as a Local Server**
 
 ```bash
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
 ```
 This runs Ollama on all interfaces, port 11434, serving models located in the specified directory.
 
-### Test the Ollama API
+#### **Test the Ollama API**
 
 curl http://10.12.248.187:11434/v1/models
 
 You should receive a JSON list of available models including kuzrag-full.
 
 
-## 4. Install Docker & Setup Kotaemon
+### **4. Install Docker & Setup Kotaemon**
    
-### a) Install Docker and Docker Compose
+#### **a) Install Docker and Docker Compose**
 
 sudo apt update
 sudo apt install docker.io docker-compose -y
 sudo systemctl enable --now docker
 
-### b) Create Project Structure
+#### **b) Create Project Structure**
 
 mkdir -p kotaemon/uploads
 cd kotaemon
 
-### c) Create Configuration Files
+#### **c) Create Configuration Files**
 env.local
 ```
 MODEL=ollama
@@ -92,7 +93,7 @@ KH_LOG_REQUESTS=true
 USE_CUSTOMIZED_GRAPHRAG_SETTING=false
 ```
 
-### d) Create docker-compose.yml
+#### **d) Create docker-compose.yml**
 ```
 version: "3.8"
 
@@ -109,12 +110,12 @@ services:
       - ./uploads:/app/uploads
 ```
 
-## 5. Launch Kotaemon
+### **5. Launch Kotaemon**
 
 docker compose up -d
 docker ps  # Verify container is running
 
-## 6. Access and Use
+### **6. Access and Use**
 
     Open your browser at http://<server_ip>:7860 (e.g., http://10.12.248.187:7860).
 
@@ -124,7 +125,7 @@ docker ps  # Verify container is running
 
 ______________________________________________________________________________________________________________________________ 
 
-## 7. You have to configure your models in Kotaemon for default use 
+### **7. You have to configure your models in Kotaemon for default use** 
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Add-Model.png">
@@ -140,7 +141,7 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________ 
 
-## 8.Upload some file to Process 
+### **8.Upload some file to Process** 
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Upload-Files.png">
@@ -150,7 +151,7 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________ 
 
-## 9. Process Files 
+### **9. Process Files** 
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-Process-File.png">
@@ -160,7 +161,7 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________ 
 
-## 10. Mind Mapp 
+### **10. Mind Mapp** 
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG-MindMap.png">
@@ -170,7 +171,7 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________
 
-## 11. Notes
+### **11. Notes**
 
     API_KEY=dummy disables API key enforcement, since Ollama local server doesn't require authentication.
 
@@ -178,7 +179,7 @@ ________________________________________________________________________________
 
     All external cloud APIs (OpenAI, Azure, Google, Cohere) are disabled for a fully local setup.
 
-## Final Project Structure
+### **Final Project Structure**
 
 kotaemon/ 
 
@@ -191,7 +192,7 @@ kotaemon/
 ______________________________________________________________________________________________________________________________ 
 
 
-## 11. Extra 
+### **11. Extra** 
 
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
 
