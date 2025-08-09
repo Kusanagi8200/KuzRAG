@@ -5,7 +5,9 @@
  <img alt="" src="">
 </picture> 
 
-# Kotaemon Deployment Tutorial with Ollama and KuzAI (All-in-One) Full Local Stack.
+# Kotaemon Deployment Tutorial with Ollama and KuzAI (All-in-One)
+
+# Full Local Stack
 
 ## 1. Project Overview
 
@@ -20,8 +22,6 @@ This setup allows running a powerful, autonomous conversational AI locally witho
 - **KuzAI**: Toolkit for training and creating Ollama-compatible models.
 - **Kotaemon**: Dockerized frontend interacting with Ollama’s API, providing a UI and file upload management.
 
----
-
 ## 2. Prerequisites
 
 - Linux server with root or sudo access.
@@ -29,7 +29,6 @@ This setup allows running a powerful, autonomous conversational AI locally witho
 - Network access to the Ollama API server (e.g., `10.12.248.187`).
 - Clone or download the Kotaemon repository from GitHub.
 
----
 
 ## 3. Install Ollama & Prepare Your Model
 
