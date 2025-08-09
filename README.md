@@ -19,7 +19,7 @@ This setup allows running a powerful, autonomous conversational AI locally witho
 - **Ollama**: Hosts and serves local LLM models via a REST API.
 - **KuzAI**: Toolkit for training and creating Ollama-compatible models.
 - **Kotaemon**: Dockerized frontend interacting with Ollama’s API, providing a UI and file upload management.
-
+______________________________________________________________________________________________________________________________ 
 
 ### **2. Prerequisites**
 
@@ -27,7 +27,7 @@ This setup allows running a powerful, autonomous conversational AI locally witho
 - Docker & Docker Compose installed.
 - Network access to the Ollama API server (e.g., `10.12.248.187`).
 - Clone or download the Kotaemon repository from GitHub.
-
+______________________________________________________________________________________________________________________________ 
 
 ### **3. Install Ollama & Prepare Your Model**
 
@@ -53,8 +53,8 @@ This runs Ollama on all interfaces, port 11434, serving models located in the sp
 
 curl http://10.12.248.187:11434/v1/models
 
-You should receive a JSON list of available models including kuzrag-full.
-
+You should receive a JSON list of available models including kuzrag-full. 
+______________________________________________________________________________________________________________________________ 
 
 ### **4. Install Docker & Setup Kotaemon**
    
@@ -109,11 +109,13 @@ services:
     volumes:
       - ./uploads:/app/uploads
 ```
+______________________________________________________________________________________________________________________________ 
 
 ### **5. Launch Kotaemon**
 
 docker compose up -d
-docker ps  # Verify container is running
+docker ps  # Verify container is running 
+______________________________________________________________________________________________________________________________ 
 
 ### **6. Access and Use**
 
@@ -122,7 +124,6 @@ docker ps  # Verify container is running
     Login with admin/admin.
 
     Upload files and interact with your local kuzrag-full Ollama model through the web UI.
-
 ______________________________________________________________________________________________________________________________ 
 
 ### **7. You have to configure your models in Kotaemon for default use** 
@@ -188,19 +189,18 @@ kotaemon/
 ├── env.local 
 
 └── uploads/ 
-
 ______________________________________________________________________________________________________________________________ 
-
 
 ### **11. Extra** 
 
+``
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
-
 sudo -u ollama env OLLAMA_HOST=0.0.0.0:11434 OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve
-
 curl http://10.12.248.187:11434/v1/models
+``
 
+``
 docker run --rm -it   --name kuzrag   -e MODEL=ollama   -e MODEL_NAME=kuzrag-full:latest   -e BASE_URL=http://10.12.248.187:11434   -e API_KEY=dummy   -e EMBEDDING_MODEL_NAME=nomic-embed-text   -p 7860:7860   ghcr.io/cinnamon/kotaemon:main-ollama
-
+``
 ______________________________________________________________________________________________________________________________
   
