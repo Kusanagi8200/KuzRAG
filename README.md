@@ -125,8 +125,8 @@ KH_LOG_REQUESTS=true
 USE_CUSTOMIZED_GRAPHRAG_SETTING=false
 ```
 
-#### **d) Create File docker-compose.yml**
-
+#### **d) Create File Docker **
+docker-compose.yml
 ```
 version: "3.8"
 
