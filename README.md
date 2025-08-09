@@ -79,9 +79,11 @@ ________________________________________________________________________________
    
 #### **a) Install Docker and Docker Compose**
 
-sudo apt update
-sudo apt install docker.io docker-compose -y
-sudo systemctl enable --now docker
+```
+apt update
+apt install docker.io docker-compose -y
+systemctl enable --now docker
+```
 
 #### **b) Create Project Structure**
 
