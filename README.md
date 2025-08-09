@@ -1,4 +1,9 @@
-# KuzRAG
+
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/KuzRAG/blob/main/KuzRAG.png">
+ <img alt="" src="">
+</picture> 
 
 # Kotaemon Deployment Tutorial with Ollama and KuzAI (All-in-One) Full Local Stack.
 
