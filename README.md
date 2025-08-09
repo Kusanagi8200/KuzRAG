@@ -154,6 +154,28 @@ docker run --rm -it --name kuzrag \
   ghcr.io/cinnamon/kotaemon:main-ollama
 ```
 
+docker run launches a temporary container (removed after exit due to --rm).
+
+-it makes the container interactive with a terminal.
+
+--name kuzrag assigns the container a name for easier reference.
+
+Environment variables (-e) configure the application:
+
+MODEL=ollama → Specifies that Ollama will be used as the LLM backend.
+
+MODEL_NAME=kuzrag-full:latest → Defines the specific Ollama model to load.
+
+BASE_URL=http://10.12.248.187:11434 → URL of the Ollama server to connect to.
+
+API_KEY=dummy → Placeholder API key (not used in local setups).
+
+EMBEDDING_MODEL_NAME=nomic-embed-text → Name of the embedding model for vector search.
+
+-p 7860:7860 maps port 7860 from the container to the host, making the web UI accessible at http://<host-ip>:7860.
+
+ghcr.io/cinnamon/kotaemon:main-ollama is the Docker image for Kotaemon (a web-based RAG interface configured for Ollama).
+
 ______________________________________________________________________________________________________________________________ 
 
 ### **5. Launch Kotaemon** 
