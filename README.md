@@ -85,8 +85,19 @@ sudo systemctl enable --now docker
 
 #### **b) Create Project Structure**
 
+```
 mkdir -p kotaemon/uploads
-cd kotaemon
+```
+
+### **Final Project Structure**
+
+kotaemon/ 
+
+├── docker-compose.yml 
+
+├── env.local 
+
+└── uploads/ 
 
 #### **c) Create Configuration Files**
 env.local
@@ -130,7 +141,7 @@ services:
       - ./uploads:/app/uploads 
 ``` 
 
-Or you can run a container itself 
+**Or you can run a container itself**
 
 ```
 docker run --rm -it --name kuzrag \
