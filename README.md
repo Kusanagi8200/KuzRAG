@@ -44,16 +44,35 @@ ________________________________________________________________________________
   
 #### **c) Run Ollama as a Local Server**
 
-```bash
+```
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
 ```
 This runs Ollama on all interfaces, port 11434, serving models located in the specified directory.
+
+Runs the Ollama service as the ollama user.
+
+OLLAMA_HOST="0.0.0.0:11434" binds the Ollama API to all network interfaces on port 11434, allowing remote access.
+
+OLLAMA_MODELS=/usr/share/ollama/.ollama/models defines the path where Ollama will look for stored models.
+
+The & at the end runs the process in the background.
+
+```
+sudo -u ollama env OLLAMA_HOST=0.0.0.0:11434 OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve
+```
+
+Same as above, but runs in the foreground (no &).
+Useful for debugging or monitoring logs directly in the terminal.
+
 
 #### **Test the Ollama API**
 
 curl http://10.12.248.187:11434/v1/models
 
+Sends an HTTP GET request to the Ollama API endpoint /v1/models at IP 10.12.248.187.
+Retrieves a list of available models currently stored on the Ollama server.
 You should receive a JSON list of available models including kuzrag-full. 
+
 ______________________________________________________________________________________________________________________________ 
 
 ### **4. Install Docker & Setup Kotaemon**
@@ -93,7 +112,8 @@ KH_LOG_REQUESTS=true
 USE_CUSTOMIZED_GRAPHRAG_SETTING=false
 ```
 
-#### **d) Create docker-compose.yml**
+#### **d) Create File docker-compose.yml**
+
 ```
 version: "3.8"
 
@@ -107,14 +127,31 @@ services:
     env_file:
       - ./env.local
     volumes:
-      - ./uploads:/app/uploads
+      - ./uploads:/app/uploads 
+``` 
+
+Or you can run a container itself 
+
 ```
+docker run --rm -it --name kuzrag \
+  -e MODEL=ollama \
+  -e MODEL_NAME=kuzrag-full:latest \
+  -e BASE_URL=http://10.12.248.187:11434 \
+  -e API_KEY=dummy \
+  -e EMBEDDING_MODEL_NAME=nomic-embed-text \
+  -p 7860:7860 \
+  ghcr.io/cinnamon/kotaemon:main-ollama
+```
+
 ______________________________________________________________________________________________________________________________ 
 
 ### **5. Launch Kotaemon** 
 
 ``
 docker compose up -d
+`` 
+
+``
 docker ps  # Verify container is running
 ``
 ______________________________________________________________________________________________________________________________ 
@@ -125,7 +162,8 @@ ________________________________________________________________________________
 
     Login with admin/admin.
 
-    Upload files and interact with your local kuzrag-full Ollama model through the web UI.
+    Upload files and interact with your local kuzrag-full Ollama model through the web UI. 
+    
 ______________________________________________________________________________________________________________________________ 
 
 ### **7. You have to configure your models in Kotaemon for default use** 
@@ -195,14 +233,14 @@ ________________________________________________________________________________
 
 ### **11. Extra** 
 
-``
+```
 sudo -u ollama env OLLAMA_HOST="0.0.0.0:11434" OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve &
 sudo -u ollama env OLLAMA_HOST=0.0.0.0:11434 OLLAMA_MODELS=/usr/share/ollama/.ollama/models ollama serve
 curl http://10.12.248.187:11434/v1/models
-``
+```
 
-``
-docker run --rm -it   --name kuzrag   -e MODEL=ollama   -e MODEL_NAME=kuzrag-full:latest   -e BASE_URL=http://10.12.248.187:11434   -e API_KEY=dummy   -e EMBEDDING_MODEL_NAME=nomic-embed-text   -p 7860:7860   ghcr.io/cinnamon/kotaemon:main-ollama
-``
+```
+docker run --rm -it --name kuzrag -e MODEL=ollama -e MODEL_NAME=kuzrag-full:latest -e BASE_URL=http://10.12.248.187:11434 -e API_KEY=dummy -e EMBEDDING_MODEL_NAME=nomic-embed-text -p 7860:7860   ghcr.io/cinnamon/kotaemon:main-ollama
+```
 ______________________________________________________________________________________________________________________________
   
